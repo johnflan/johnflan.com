@@ -30,12 +30,6 @@ context:
                 css_class: map
                 type: page
                 url: interesting_places.html
-            -
-                name: About
-                description: About
-                css_class: about
-                type: page
-                url: about.html
 meta:
     nodemeta: meta.yaml
     created: !!timestamp 2010-01-01 00:00:00

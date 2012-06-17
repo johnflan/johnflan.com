@@ -8,10 +8,7 @@
 <head>
   {% block starthead %}{% endblock starthead %}
   <meta charset="{{ resource.meta.charset }}">
-
   <meta http-equiv="X-UA-Compatible" content="{{ resource.meta.compatibility }}">
-
-
   <title>{% block title %}{{ resource.meta.title }}{% endblock %}</title>
   <meta name="description" content="{{ resource.meta.description }}">
   <meta name="author" content="{{ resource.meta.author }}">
@@ -20,8 +17,6 @@
   <meta name="viewport" content="{{ resource.meta.viewport }}">
 
   {% block favicons %}
-  <!-- Place favicon.ico & apple-touch-icon.png
-        in the root of your domain and delete these references -->
   <link rel="shortcut icon" href="{{ media_url('/favicon.ico') }}">
   {% endblock favicons %}
 
@@ -31,9 +26,7 @@
   {% endblock css %}
 
   {% block headjs %}
-  <!-- All JavaScript at the bottom, except for Modernizr which
-        enables HTML5 elements & feature detects -->
-    <script src="{{ media_url('js/libs/modernizr-1.7.min.js') }}"></script>
+  
   {% endblock headjs %}
   {% block endhead %}{% endblock endhead %}
 </head>
@@ -65,12 +58,6 @@
   </footer>
   {% endblock content%}
   {% block js %}
-  <!-- Javascript at the bottom for fast page loading -->
-  {% block jquery %}
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.5.1.min.js">\x3C/script>')</script>
-  {% endblock jquery %}
 
   {% block scripts %}
   {% endblock scripts %}

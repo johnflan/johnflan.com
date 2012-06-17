@@ -1,0 +1,50 @@
+---
+title: A real social network
+description: 
+created: !!timestamp '2011-01-28 10:00:00'
+---
+
+{% mark excerpt -%}
+
+What if... your social network was not defined by your on-line activity, but was
+generated from the people you meet daily, taking into account how regularly you
+meet, the time of day, location and duration.
+
+As surprising as it sounds the technology for a network of this type exists
+today, not in some shady lab run by Google, Facebook or even Microsoft, but in
+our pockets.
+
+{%- endmark %}
+
+Recently I toyed a little with the Facebook Open Graph, and since then I have
+been considering how these Object ID's map to the real world. Everything in the
+Open Graph is an object in the software development sense and Object ID's are
+used to represent individual people, businesses, events, places and activities.
+
+So how can we exchange these ID's quickly and invisibly?
+
+A number of methods exist today to integrate this functionality into say the
+Android or iPhone Facebook applications. For example a handset could broadcast
+a Wi-Fi SSID of "FB-ID:XXXXXXXX" where X's would represent the users Facebook
+Object ID. Bluetooth radios could also be utilised to transmit and receive this
+information, offering an advantage of a shorter range (10m or so) enabling the
+software to understand that this person was in close physical proximity.
+Concurrently, your device on say a thirty-second interval could perform a scan
+looking for other devices broadcasting an SSID with a "FB-ID:" prefix. With
+this data the software can trivially discover if the detected Object ID's
+around you resolve to existing Facebook friends. If they turnout to be valid
+object references then record the duration, the location (from GPS) and time of
+the meeting, and if the Object ID's dont match existing friends store them for
+later analysis.
+
+We can build systems that can dynamically partition these aquantances into
+categories like close friends, co-workers, business contacts and others. And
+importantly, manage how these relationships change over time  representing your
+current real life social network.
+
+Whether or not current wireless technologies are up to this task or if users
+would be happy with this level of invasion remain to be seen, but I am
+confident that this is how the Facebook of tomorrow will function.
+
+Thoughts or comments are appreciated.
+
