@@ -68,6 +68,18 @@ body{
     filter: dropshadow(color=#ffffff, offx=1, offy=1);
 }
 
+#header-content #titlelink{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#header-content #titlelink:hover{
+    opacity: .75;
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+}
+
 #container{
 }
 
@@ -118,19 +130,18 @@ footer{
 .banner h1{
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
     letter-spacing: -1px;
-    font-weight: 400;
-    font-size: 34px;
+    font-weight: 800;
+    font-size: 26px;
     display: inline;
     margin: 0;
     color: #0059A7;
-    font-variant: small-caps;
 }
 
 nav{
     display: inline;
     margin: 0;
     position: absolute;
-    top: 10px;
+    top: 6px;
     right: 0px;
 }
 
@@ -215,7 +226,7 @@ time {
 }
 
 article.post p{
-    font-size: 15px;
+    font-size: 18px;
     line-height: 26px;
     margin: 23px 0;
     text-align: justify;
