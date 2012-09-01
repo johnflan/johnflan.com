@@ -1,0 +1,28 @@
+---
+title: Facebook and unexpected user behaviour
+description: 
+created: !!timestamp '2011-09-01 15:39:00'
+---
+
+{% mark excerpt -%}
+
+Deactivating your account is a very expensive operation for Facebook. For the
+most part, your data is persisted in MySql databases and most users have tens
+of thousands of items and maybe more.
+
+{%- endmark %}
+
+In order to deactivate your account they must create a batch job to go through
+every database and every entry in each database for that user and set a privacy
+flag; the account data persists but it becomes invisible. 
+
+Here comes the interesting part; At some stage it came to light the there were
+a group of Facebook users that would deactivate their accounts before going to
+sleep. In a way it’s an excellent privacy mechanism, nobody can interact with
+you until you reactivate your account. But, for Facebook it was incredibly
+painful making database access slow for all users or worst case becoming
+unresponsive altogether.
+
+This problem has since been fixed, you may now only deactivate and reactivate
+your account a certain number of times in a given period. But, an interesting
+aside nonetheless.

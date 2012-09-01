@@ -25,6 +25,12 @@ context:
                 type: node
                 url: blog/
             -
+                name: Projects 
+                description: projects
+                css_class: blog
+                type: node
+                url: projects/
+            -
                 name: Interesting places
                 description: Interesting places
                 css_class: map
