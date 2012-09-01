@@ -10,7 +10,6 @@
   <meta charset="{{ resource.meta.charset }}">
   <meta http-equiv="X-UA-Compatible" content="{{ resource.meta.compatibility }}">
   <title>{% block title %}{{ resource.meta.title }}{% endblock %}</title>
-  <meta name="description" content="{{ resource.meta.description }}">
   <meta name="author" content="{{ resource.meta.author }}">
 
   <!--  Mobile viewport optimized: j.mp/bplateviewport -->
@@ -29,6 +28,11 @@
   
   {% endblock headjs %}
   {% block endhead %}{% endblock endhead %}
+
+  {% block analytics %}
+  {% include "analytics.j2" %}
+  {% endblock analytics %}
+
 </head>
 <body id="{{ resource.meta.id if resource.meta.id else resource.slug }}">
   {% block content %}
@@ -62,10 +66,6 @@
   {% block scripts %}
   {% endblock scripts %}
 
-
-  {% block analytics %}
-  {% include "analytics.j2" %}
-  {% endblock analytics %}
 
   {% endblock js %}
 </body>
