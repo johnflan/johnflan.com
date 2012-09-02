@@ -1,29 +1,30 @@
 ---
 title: RightTurn Android application
 created: !!timestamp '2012-09-01 15:39:00'
+header: proj_right_turn_header.jpg
 ---
 
 {% mark excerpt -%}
-
-Deactivating your account is a very expensive operation for
-[Facebook](https://www.facebook.com). For the most part, your data is persisted
-in [MySql](https://www.facebook.com/MySQLatFacebook) databases and most users
-have tens of thousands of items and maybe more.
-
+Right turn was the Android based interface to a social traffic aggregation
+system. This was created as part of group project work during my time in
+[Imperial College](http://www3.imperial.ac.uk/computing/). The overall concept of the project was to integrate Tweets
+about traffic in London with data feeds from [Transport for
+London](http://tfl.gov.uk), in order to expose social knowledge around traffic events.
 {%- endmark %}
 
-In order to deactivate your account they must create a batch job to go through
-every database and every entry in each database for that user and set a privacy
-flag; the account data persists but it becomes invisible. 
+##System overview
+The backend system collected tweets from Twitter and TfL data feeds which were
+stored in a geographic database. To identify valuable tweets; tweets which
+discussed traffic, we trained a [naive Bayes
+classifier](http://wikipedia.org/wiki/Naive_Bayes_classifier) to perform that task. Of
+these identified tweets it was discovered that only a small number of tweets
+contained explicit geographic information (GPS coords). To maximize the value
+of the tweets without geographic information, we attempted to use [reverse
+geocoding](http://wikipedia.org/wiki/Reverse_geocoding). This involved a process of creating a regular expression to identify
+street and place names and utilised the [Google Maps
+API](https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding) to resolve those names
+to geographical locations.
 
-Here comes the interesting part; At some stage it came to light the there were
-*a group of Facebook users that would deactivate their accounts before going to
-sleep*. In a way it's an excellent privacy mechanism, nobody can interact with
-you until you reactivate your account. But, for Facebook it was incredibly
-painful making database access slow for all users or worst case becoming
-unresponsive altogether.
 
-This problem has since been fixed, you may now only deactivate and reactivate
-your account a certain number of times in a given period. But, an interesting
-aside nonetheless.
-
+<iframe width="420" height="315" src="http://www.youtube.com/embed/6H_Vprs1gfM"
+frameborder="0" allowfullscreen></iframe>

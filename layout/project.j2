@@ -1,0 +1,47 @@
+{% extends "base.j2" %}
+
+{% block main -%}
+<article class="project">
+
+<div class="projtitleimage">
+<img src="../media/{{ resource.meta.header }}"></img>
+</div>
+
+<h1 class="title">
+    <a href="{{ content_url(resource.url) }}">
+        {{ resource.meta.title }}
+    </a>
+</h1>
+
+<div class="time">
+<time datetime="{{ resource.meta.created.strftime('%Y-%m-%d') }}">
+    {{ resource.meta.created.strftime('%a, %d %b %Y') }}
+</time>
+</div>
+
+
+{% filter markdown|typogrify -%}
+{% mark post -%}
+{% block post -%}{%- endblock %}
+{%- endmark %}
+{%- endfilter %}
+</article>
+
+<comments>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+var disqus_shortname = 'johnflan'; 
+
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] ||
+    document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+</comments>
+
+
+{%- endblock %}
